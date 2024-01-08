@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portal/flutter_portal.dart';
 import 'package:provider/provider.dart';
+import 'package:web_with_flutter/Screens/mapping.dart';
 
 import 'services/tabAnimationService.dart';
 import 'utils/tabAnimation.dart';
@@ -37,11 +38,7 @@ class _MyAppState extends State<MyApp> {
                   ),
                 )
               : changeContext.btnPressed == 1
-                  ? const SizedBox(
-                      child: Center(
-                        child: Text("Mapping"),
-                      ),
-                    )
+                  ? const MappingTab()
                   : changeContext.btnPressed == 2
                       ? const SizedBox(
                           child: Center(
