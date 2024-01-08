@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:web_with_flutter/AppBar/drawer_page.dart';
+import 'package:web_with_flutter/Screens/AppBar/drawer_page.dart';
 import 'package:web_with_flutter/utils/hieght_width.dart';
 
 class LandingPage extends StatelessWidget {
@@ -40,8 +40,3 @@ class LandingPage extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
