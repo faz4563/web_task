@@ -1,4 +1,7 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MappingTab extends StatefulWidget {
   const MappingTab({super.key});
@@ -26,266 +29,403 @@ class _MappingTabState extends State<MappingTab> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Template Name"),
-                          SizedBox(height: 10),
-                          SizedBox(
-                            height: 30,
-                            width: 260,
-                            child: TextField(
-                              cursorColor: Colors.black,
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.black),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(5))),
-                                disabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.black),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(5))),
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.black),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(5))),
-                              ),
-                            ),
-                          )
-                        ]),
-                    Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Template Type"),
-                          SizedBox(height: 10),
-                          DropdownButtonExample()
-                        ]),
-                    Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Report ID"),
-                          SizedBox(height: 10),
-                          SizedBox(
-                            height: 30,
-                            width: 260,
-                            child: TextField(
-                              cursorColor: Colors.black,
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.black),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(5))),
-                                disabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.black),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(5))),
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.black),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(5))),
-                              ),
-                            ),
-                          )
-                        ]),
-                  ]),
-              const SizedBox(height: 50),
-              const Text("SET INPUT OPTION",
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
-              const SizedBox(height: 10),
               Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Object type"),
-                          SizedBox(height: 10),
-                          SizedBox(
-                            height: 30,
-                            width: 260,
-                            child: TextField(
-                              cursorColor: Colors.black,
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.black),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(5))),
-                                disabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.black),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(5))),
-                                enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(color: Colors.black),
-                                    borderRadius:
-                                        BorderRadius.all(Radius.circular(5))),
-                              ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.h),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(vertical: 10.h),
+                              child: const Text("Template Name :"),
                             ),
-                          )
-                        ]),
-                    const Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text("Lable for Input value"),
-                          SizedBox(height: 10),
-                          DropdownButtonExample()
-                        ]),
-                    Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          const Text("Allow Multi Select"),
-                          const SizedBox(height: 10),
-                          Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Radio<String>(
-                                  fillColor: const MaterialStatePropertyAll(
-                                      Colors.teal),
-                                  value: 'Yes',
-                                  groupValue: _selectedOption,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      _selectedOption = value!;
-                                    });
-                                  },
-                                ),
-                                Text(
-                                  'Yes',
-                                  style: TextStyle(
-                                      color: _selectedOption == "Yes"
-                                          ? Colors.teal
-                                          : Colors
-                                              .black), // Custom color for "No"
-                                ),
-                                const SizedBox(width: 20),
-                                Radio<String>(
-                                  fillColor: const MaterialStatePropertyAll(
-                                      Colors.teal),
-                                  value: 'No',
-                                  groupValue: _selectedOption,
-                                  onChanged: (value) {
-                                    setState(() {
-                                      _selectedOption = value!;
-                                    });
-                                  },
-                                ),
-                                Text(
-                                  'No',
-                                  style: TextStyle(
-                                      color: _selectedOption == "No"
-                                          ? Colors.teal
-                                          : Colors
-                                              .black), // Custom color for "No"
-                                ),
-                                const SizedBox(width: 60),
-                                ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colors.black,
-                                        fixedSize: const Size(80, 15),
-                                        shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(8))),
-                                    onPressed: () {},
-                                    child: const Text(
-                                      "Add",
-                                      style: TextStyle(color: Colors.white),
-                                    ))
-                              ])
-                        ]),
+                            SizedBox(
+                                height: 35.h,
+                                width: 60.w,
+                                child: TextFormField(
+                                  readOnly: false,
+                                  style: TextStyle(fontSize: 4.0.sp),
+                                  cursorColor: Colors.black,
+                                  cursorWidth: 1,
+                                  decoration: InputDecoration(
+                                      contentPadding:
+                                          EdgeInsets.only(top: 2.h, left: 2.w),
+                                      hintText: "Template Name",
+                                      disabledBorder: const OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.black, width: 1),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(5))),
+                                      enabledBorder: const OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.black, width: 1),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(5))),
+                                      border: const OutlineInputBorder(
+                                          borderSide: BorderSide(
+                                              color: Colors.black, width: 1),
+                                          borderRadius: BorderRadius.all(
+                                              Radius.circular(5)))),
+                                ))
+                          ]),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.h),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(vertical: 10.h),
+                              child: const Text("Template Type"),
+                            ),
+                            const DropdownButtonExample()
+                          ]),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.h),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(vertical: 10.h),
+                              child: const Text("Report ID"),
+                            ),
+                            // const SizedBox(height: 10),
+                            SizedBox(
+                              height: 35.h,
+                              width: 60.w,
+                              child: TextFormField(
+                                cursorColor: Colors.black,
+                                decoration: InputDecoration(
+                                    contentPadding:
+                                        EdgeInsets.only(top: 2.h, left: 2.w),
+                                    hintText: "Report ID",
+                                    disabledBorder: const OutlineInputBorder(
+                                        borderSide:
+                                            BorderSide(color: Colors.black),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(5))),
+                                    enabledBorder: const OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Colors.black,
+                                        ),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(5))),
+                                    border: const OutlineInputBorder(
+                                        borderSide:
+                                            BorderSide(color: Colors.black),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(5)))),
+                              ),
+                            )
+                          ]),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.h),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(vertical: 10.h),
+                              child: const Text("Object type"),
+                            ),
+                            // const SizedBox(height: 10),
+                            SizedBox(
+                              height: 35.h,
+                              width: 60.w,
+                              child: TextFormField(
+                                cursorColor: Colors.black,
+                                cursorWidth: 1,
+                                decoration: InputDecoration(
+                                    contentPadding:
+                                        EdgeInsets.only(top: 2.h, left: 2.w),
+                                    hintText: "Object type",
+                                    disabledBorder: const OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Colors.black, width: 1),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(5))),
+                                    enabledBorder: const OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Colors.black, width: 1),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(5))),
+                                    border: const OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                            color: Colors.black, width: 1),
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(5)))),
+                              ),
+                            )
+                          ]),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10.h),
+                      child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.symmetric(vertical: 10.h),
+                              child: const Text("Lable for Input value"),
+                            ),
+                            // SizedBox(height: 10),
+                            const DropdownButtonExample()
+                          ]),
+                    ),
                   ]),
-              const SizedBox(height: 20),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                width: double.infinity,
-                height: 30,
-                color: Colors.grey.shade200,
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text("S.No",
-                        style: TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.w700)),
-                    SizedBox(width: 50),
-                    Text("Object Type",
-                        style: TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.w700)),
-                    SizedBox(width: 90),
-                    Text("Lable for Input Value",
-                        style: TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.w700)),
-                    SizedBox(width: 40),
-                    Text("Allow Multi Select",
-                        style: TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.w700)),
-                    SizedBox(width: 60),
-                    Text("Action",
-                        style: TextStyle(
-                            fontSize: 12, fontWeight: FontWeight.w700)),
-                  ],
-                ),
+              // const SizedBox(height: 50),
+              // const Text("SET INPUT OPTION",
+              //     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
+              // const SizedBox(height: 10),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text("Allow Multi Select"),
+                            // const SizedBox(height: 10),
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                bottom: 10,
+                              ),
+                              child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: <Widget>[
+                                    Radio<String>(
+                                      fillColor: const MaterialStatePropertyAll(
+                                          Colors.teal),
+                                      value: 'Yes',
+                                      groupValue: _selectedOption,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          _selectedOption = value!;
+                                        });
+                                      },
+                                    ),
+                                    Text(
+                                      'Yes',
+                                      style: TextStyle(
+                                          color: _selectedOption == "Yes"
+                                              ? Colors.teal
+                                              : Colors
+                                                  .black), // Custom color for "No"
+                                    ),
+                                    const SizedBox(width: 20),
+                                    Radio<String>(
+                                      fillColor: const MaterialStatePropertyAll(
+                                          Colors.teal),
+                                      value: 'No',
+                                      groupValue: _selectedOption,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          _selectedOption = value!;
+                                        });
+                                      },
+                                    ),
+                                    Text(
+                                      'No',
+                                      style: TextStyle(
+                                          color: _selectedOption == "No"
+                                              ? Colors.teal
+                                              : Colors
+                                                  .black), // Custom color for "No"
+                                    ),
+                                    const SizedBox(width: 60),
+                                    ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                            backgroundColor: Colors.black,
+                                            fixedSize: const Size(80, 15),
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(8))),
+                                        onPressed: () {},
+                                        child: const Text(
+                                          "Add",
+                                          style: TextStyle(color: Colors.white),
+                                        ))
+                                  ]),
+                            )
+                          ]),
+                    ]),
               ),
-              SizedBox(
-                height: 300,
-                child: ListView.builder(
-                    itemCount: tablecontent.length,
-                    itemBuilder: (context, index) => Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 20),
-                          width: double.infinity,
-                          height: 30,
-                          decoration: BoxDecoration(
-                              border:
-                                  Border.all(width: 0.03, color: Colors.black)),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text("${index + 1}",
-                                  style: const TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w700)),
-                              const SizedBox(width: 165),
-                              Text(tablecontent[index].name,
-                                  style: const TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w700)),
-                              const SizedBox(width: 260),
-                              Text(tablecontent[index].value,
-                                  style: const TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w700)),
-                              const SizedBox(width: 230),
-                              Text(tablecontent[index].status,
-                                  style: const TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w700)),
-                              const SizedBox(width: 210),
-                              const Icon(
-                                Icons.delete,
-                                color: Colors.red,
-                                size: 15,
-                              )
-                            ],
+              const SizedBox(height: 20),
+
+              Container(
+                // width: double.infinity,
+                decoration: BoxDecoration(border: Border.all(width: 0.5)),
+                child: DataTable(
+                    headingRowColor: const MaterialStatePropertyAll(
+                        Color.fromARGB(255, 211, 207, 207)),
+                    columns: [
+                      DataColumn(
+                        label: SizedBox(
+                          width: 10.w,
+                          child: const Text(
+                            "Si.No",
+                            textAlign: TextAlign.start,
                           ),
-                        )),
+                        ),
+                        numeric: true,
+                      ),
+                      const DataColumn(
+                          label: Text(
+                            "Object Type",
+                            textAlign: TextAlign.start,
+                          ),
+                          numeric: false),
+                      const DataColumn(
+                          label: Text(
+                            "Label For Input Value",
+                            textAlign: TextAlign.start,
+                          ),
+                          numeric: false),
+                      const DataColumn(
+                          label: Text(
+                            "Allow Multi Select",
+                            textAlign: TextAlign.start,
+                          ),
+                          numeric: false),
+                      const DataColumn(
+                          label: Text(
+                            "Action",
+                            textAlign: TextAlign.start,
+                          ),
+                          numeric: false),
+                    ],
+                    rows: [
+                      DataRow(cells: [
+                        const DataCell(
+                          Text(
+                            "1",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        const DataCell(
+                          Text(
+                            "Fazil",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        const DataCell(
+                          Text(
+                            "Value",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        DataCell(
+                          const Text(
+                            "Y",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        DataCell(IconButton(
+                            onPressed: () {}, icon: const Icon(Icons.delete))),
+                      ]),
+                      DataRow(cells: [
+                        const DataCell(
+                          Text(
+                            "2",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        const DataCell(
+                          Text(
+                            "Deena",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        const DataCell(
+                          Text(
+                            "Value",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        const DataCell(
+                          Text(
+                            "Y",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        DataCell(IconButton(
+                            onPressed: () {}, icon: const Icon(Icons.delete))),
+                      ]),
+                      DataRow(cells: [
+                        const DataCell(
+                          Text(
+                            "3",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        const DataCell(
+                          Text(
+                            "Surya",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        const DataCell(
+                          Text(
+                            "Value",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        const DataCell(
+                          Text(
+                            "Y",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        DataCell(IconButton(
+                            onPressed: () {}, icon: const Icon(Icons.delete))),
+                      ]),
+                      DataRow(cells: [
+                        const DataCell(
+                          Text(
+                            "4",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        const DataCell(
+                          Text(
+                            "Ganesh",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        const DataCell(
+                          Text(
+                            "Value",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        const DataCell(
+                          Text(
+                            "Y",
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
+                        DataCell(IconButton(
+                            onPressed: () {}, icon: const Icon(Icons.delete))),
+                      ]),
+                    ]),
               )
             ]),
       ),
     );
   }
 }
-
-/// Flutter code sample for [DropdownButton].
 
 const List<String> list = <String>[
   'Consolidate',
@@ -307,12 +447,13 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 30,
-      width: 260,
+      height: 35.h,
+      width: 60.w,
       decoration: BoxDecoration(
           border: Border.all(color: Colors.black),
           borderRadius: BorderRadius.circular(5)),
       child: DropdownButton<String>(
+        hint: const Text("Template Type"),
         iconEnabledColor: Colors.transparent,
         iconDisabledColor: Colors.transparent,
         underline: Container(
@@ -330,8 +471,9 @@ class _DropdownButtonExampleState extends State<DropdownButtonExample> {
         },
         items: list.map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
+            alignment: Alignment.centerLeft,
             value: value,
-            child: Center(child: Text(value)),
+            child: Text(value),
           );
         }).toList(),
       ),

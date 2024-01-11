@@ -38,6 +38,9 @@ dependencies:
   panels: ^0.0.3
   flutter_portal: ^1.1.4
   provider: ^6.1.1
+  google_maps_flutter: ^2.5.1
+  flutter_map_location_marker: ^8.0.3
+  flutter_screenutil: ^5.9.0
 
 dev_dependencies:
   flutter_test:
