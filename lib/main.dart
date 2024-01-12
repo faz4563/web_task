@@ -38,11 +38,16 @@ class _MyAppState extends State<MyApp> {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: Scaffold(
-          appBar: AppBar(title: const Text('Neverskip Testing Tech')),
+          appBar: AppBar(
+              backgroundColor: Colors.blue,
+              title: const Text(
+                'Neverskip Testing Tech',
+                style: TextStyle(color: Colors.white),
+              )),
           body: changeContext.btnPressed == 0
-              ? const MappingTab()
+              ? const GenaralTab()
               : changeContext.btnPressed == 1
-                  ? const GenaralTab()
+                  ? const MappingTab()
                   : changeContext.btnPressed == 2
                       ? const SizedBox(
                           child: Center(

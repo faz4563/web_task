@@ -12,11 +12,7 @@ class MappingTab extends StatefulWidget {
 
 class _MappingTabState extends State<MappingTab> {
   String _selectedOption = 'Yes';
-  List<tableData> tablecontent = [
-    tableData("Deena", "10", "Y"),
-    tableData("Fazil   ", "8", "  Y"),
-    tableData("Kavi   ", "16", "N")
-  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,6 +25,14 @@ class _MappingTabState extends State<MappingTab> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Text(
+                "MAPPING",
+                style: TextStyle(
+                    fontSize: 6.sp,
+                    fontWeight: FontWeight.bold,
+                    // decoration: TextDecoration.underline,
+                    letterSpacing: 1.0),
+              ),
               Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -264,163 +268,283 @@ class _MappingTabState extends State<MappingTab> {
               ),
               const SizedBox(height: 20),
 
-              Container(
-                // width: double.infinity,
-                decoration: BoxDecoration(border: Border.all(width: 0.5)),
-                child: DataTable(
-                    headingRowColor: const MaterialStatePropertyAll(
-                        Color.fromARGB(255, 211, 207, 207)),
-                    columns: [
-                      DataColumn(
-                        label: SizedBox(
-                          width: 10.w,
-                          child: const Text(
-                            "Si.No",
-                            textAlign: TextAlign.start,
+              // Container(
+              //   // width: double.infinity,
+              //   decoration: BoxDecoration(border: Border.all(width: 0.5)),
+              //   child: DataTable(
+              //       headingRowColor: const MaterialStatePropertyAll(
+              //           Color.fromARGB(255, 211, 207, 207)),
+              //       columns: [
+              //         DataColumn(
+              //           label: SizedBox(
+              //             width: 10.w,
+              //             child: const Text(
+              //               "Si.No",
+              //               textAlign: TextAlign.start,
+              //             ),
+              //           ),
+              //           numeric: true,
+              //         ),
+              //         const DataColumn(
+              //             label: Text(
+              //               "Object Type",
+              //               textAlign: TextAlign.start,
+              //             ),
+              //             numeric: false),
+              //         const DataColumn(
+              //             label: Text(
+              //               "Label For Input Value",
+              //               textAlign: TextAlign.start,
+              //             ),
+              //             numeric: false),
+              //         const DataColumn(
+              //             label: Text(
+              //               "Allow Multi Select",
+              //               textAlign: TextAlign.start,
+              //             ),
+              //             numeric: false),
+              //         const DataColumn(
+              //             label: Text(
+              //               "Action",
+              //               textAlign: TextAlign.start,
+              //             ),
+              //             numeric: false),
+              //       ],
+              //       rows: [
+              //         DataRow(cells: [
+              //           const DataCell(
+              //             Text(
+              //               "1",
+              //               textAlign: TextAlign.center,
+              //             ),
+              //           ),
+              //           const DataCell(
+              //             Text(
+              //               "Fazil",
+              //               textAlign: TextAlign.center,
+              //             ),
+              //           ),
+              //           const DataCell(
+              //             Text(
+              //               "Value",
+              //               textAlign: TextAlign.center,
+              //             ),
+              //           ),
+              //           DataCell(
+              //             const Text(
+              //               "Y",
+              //               textAlign: TextAlign.center,
+              //             ),
+              //           ),
+              //           DataCell(IconButton(
+              //               onPressed: () {}, icon: const Icon(Icons.delete))),
+              //         ]),
+              //         DataRow(cells: [
+              //           const DataCell(
+              //             Text(
+              //               "2",
+              //               textAlign: TextAlign.center,
+              //             ),
+              //           ),
+              //           const DataCell(
+              //             Text(
+              //               "Deena",
+              //               textAlign: TextAlign.center,
+              //             ),
+              //           ),
+              //           const DataCell(
+              //             Text(
+              //               "Value",
+              //               textAlign: TextAlign.center,
+              //             ),
+              //           ),
+              //           const DataCell(
+              //             Text(
+              //               "Y",
+              //               textAlign: TextAlign.center,
+              //             ),
+              //           ),
+              //           DataCell(IconButton(
+              //               onPressed: () {}, icon: const Icon(Icons.delete))),
+              //         ]),
+              //         DataRow(cells: [
+              //           const DataCell(
+              //             Text(
+              //               "3",
+              //               textAlign: TextAlign.center,
+              //             ),
+              //           ),
+              //           const DataCell(
+              //             Text(
+              //               "Surya",
+              //               textAlign: TextAlign.center,
+              //             ),
+              //           ),
+              //           const DataCell(
+              //             Text(
+              //               "Value",
+              //               textAlign: TextAlign.center,
+              //             ),
+              //           ),
+              //           const DataCell(
+              //             Text(
+              //               "Y",
+              //               textAlign: TextAlign.center,
+              //             ),
+              //           ),
+              //           DataCell(IconButton(
+              //               onPressed: () {}, icon: const Icon(Icons.delete))),
+              //         ]),
+              //         DataRow(cells: [
+              //           const DataCell(
+              //             Text(
+              //               "4",
+              //               textAlign: TextAlign.center,
+              //             ),
+              //           ),
+              //           const DataCell(
+              //             Text(
+              //               "Ganesh",
+              //               textAlign: TextAlign.center,
+              //             ),
+              //           ),
+              //           const DataCell(
+              //             Text(
+              //               "Value",
+              //               textAlign: TextAlign.center,
+              //             ),
+              //           ),
+              //           const DataCell(
+              //             Text(
+              //               "Y",
+              //               textAlign: TextAlign.center,
+              //             ),
+              //           ),
+              //           DataCell(IconButton(
+              //               onPressed: () {}, icon: const Icon(Icons.delete))),
+              //         ]),
+              //       ]),
+              // )
+
+              Expanded(
+                // width: DynamicSizes.width(context),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 0),
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 30.h,
+                        color: const Color.fromARGB(255, 211, 204, 204),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 15),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                width: 15.w,
+                                child: const Center(
+                                  child: Text(
+                                    "Si.No",
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 25.w,
+                              ),
+                              SizedBox(
+                                // color: Colors.yellow,
+                                width: 45.w,
+                                child: const Text(
+                                  "Object Type",
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 45.w,
+                              ),
+                              // const Spacer(),
+                              const Text("Label For Input Value"),
+                              SizedBox(
+                                width: 45.w,
+                              ),
+                              // const Spacer(),
+                              const Text("Allow Multi Select"),
+                              SizedBox(
+                                width: 70.w,
+                              ),
+                              // const Spacer(),
+                              const Text("Action"),
+                            ],
                           ),
                         ),
-                        numeric: true,
                       ),
-                      const DataColumn(
-                          label: Text(
-                            "Object Type",
-                            textAlign: TextAlign.start,
-                          ),
-                          numeric: false),
-                      const DataColumn(
-                          label: Text(
-                            "Label For Input Value",
-                            textAlign: TextAlign.start,
-                          ),
-                          numeric: false),
-                      const DataColumn(
-                          label: Text(
-                            "Allow Multi Select",
-                            textAlign: TextAlign.start,
-                          ),
-                          numeric: false),
-                      const DataColumn(
-                          label: Text(
-                            "Action",
-                            textAlign: TextAlign.start,
-                          ),
-                          numeric: false),
+                      Expanded(
+                        child: ListView.builder(
+                          itemCount: 3,
+                          itemBuilder: (context, index) {
+                            return Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      color: const Color.fromARGB(
+                                          255, 211, 204, 204),
+                                      width: 0.5)),
+                              child: Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 15),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    SizedBox(
+                                      // color: Colors.yellow,
+                                      width: 15.w,
+                                      child: Text(
+                                        "${index + 1}",
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 27.w,
+                                    ),
+                                    SizedBox(
+                                      // color: Colors.yellow,
+                                      width: 30.w,
+                                      child: const Text(
+                                        "Fazil",
+                                        textAlign: TextAlign.center,
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      width: 60.w,
+                                    ),
+                                    const Text("Value"),
+                                    // const Spacer(),
+                                    SizedBox(
+                                      width: 70.w,
+                                    ),
+
+                                    const Text("Y"),
+                                    // const Spacer(),
+                                    SizedBox(
+                                      width: 85.w,
+                                    ),
+                                    IconButton(
+                                      onPressed: () {},
+                                      icon: const Icon(Icons.delete),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
                     ],
-                    rows: [
-                      DataRow(cells: [
-                        const DataCell(
-                          Text(
-                            "1",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        const DataCell(
-                          Text(
-                            "Fazil",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        const DataCell(
-                          Text(
-                            "Value",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        DataCell(
-                          const Text(
-                            "Y",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        DataCell(IconButton(
-                            onPressed: () {}, icon: const Icon(Icons.delete))),
-                      ]),
-                      DataRow(cells: [
-                        const DataCell(
-                          Text(
-                            "2",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        const DataCell(
-                          Text(
-                            "Deena",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        const DataCell(
-                          Text(
-                            "Value",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        const DataCell(
-                          Text(
-                            "Y",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        DataCell(IconButton(
-                            onPressed: () {}, icon: const Icon(Icons.delete))),
-                      ]),
-                      DataRow(cells: [
-                        const DataCell(
-                          Text(
-                            "3",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        const DataCell(
-                          Text(
-                            "Surya",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        const DataCell(
-                          Text(
-                            "Value",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        const DataCell(
-                          Text(
-                            "Y",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        DataCell(IconButton(
-                            onPressed: () {}, icon: const Icon(Icons.delete))),
-                      ]),
-                      DataRow(cells: [
-                        const DataCell(
-                          Text(
-                            "4",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        const DataCell(
-                          Text(
-                            "Ganesh",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        const DataCell(
-                          Text(
-                            "Value",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        const DataCell(
-                          Text(
-                            "Y",
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        DataCell(IconButton(
-                            onPressed: () {}, icon: const Icon(Icons.delete))),
-                      ]),
-                    ]),
-              )
+                  ),
+                ),
+              ),
             ]),
       ),
     );
