@@ -31,7 +31,6 @@ class _GenaralTabState extends State<GenaralTab> {
                 style: TextStyle(
                     fontSize: 6.sp,
                     fontWeight: FontWeight.bold,
-                    // decoration: TextDecoration.underline,
                     letterSpacing: 1.0),
               ),
               Row(
@@ -155,7 +154,7 @@ class _GenaralTabState extends State<GenaralTab> {
                             fontWeight: FontWeight.bold,
                             letterSpacing: 1.0),
                       ),
-                      // const SizedBox(height: 10),
+                      SizedBox(height: 5.h),
                       Padding(
                         padding: const EdgeInsets.only(
                           bottom: 10,
@@ -164,8 +163,8 @@ class _GenaralTabState extends State<GenaralTab> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: <Widget>[
                               Radio<String>(
-                                fillColor:
-                                    const MaterialStatePropertyAll(Colors.teal),
+                                fillColor: const MaterialStatePropertyAll(
+                                    Color.fromARGB(255, 0, 0, 0)),
                                 value: 'Pdf',
                                 groupValue: _selectedOption,
                                 onChanged: (value) {
@@ -178,14 +177,14 @@ class _GenaralTabState extends State<GenaralTab> {
                                 'Pdf',
                                 style: TextStyle(
                                     color: _selectedOption == "Yes"
-                                        ? Colors.teal
+                                        ? Colors.black
                                         : Colors
                                             .black), // Custom color for "No"
                               ),
                               const SizedBox(width: 20),
                               Radio<String>(
-                                fillColor:
-                                    const MaterialStatePropertyAll(Colors.teal),
+                                fillColor: const MaterialStatePropertyAll(
+                                    Color.fromARGB(255, 0, 0, 0)),
                                 value: 'Excel',
                                 groupValue: _selectedOption,
                                 onChanged: (value) {
@@ -204,8 +203,9 @@ class _GenaralTabState extends State<GenaralTab> {
                               ),
                             ]),
                       ),
-
-                      const SizedBox(width: 60),
+                      SizedBox(
+                        height: 30.h,
+                      ),
                       ElevatedButton(
                           style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.black,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_portal/flutter_portal.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:web_with_flutter/Screens/Design.dart';
 import 'package:web_with_flutter/Screens/general.dart';
 import 'package:web_with_flutter/Screens/mapping.dart';
 
@@ -39,6 +40,7 @@ class _MyAppState extends State<MyApp> {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: AppBar(
+              centerTitle: false,
               backgroundColor: Colors.blue,
               title: const Text(
                 'Neverskip Testing Tech',
@@ -49,11 +51,7 @@ class _MyAppState extends State<MyApp> {
               : changeContext.btnPressed == 1
                   ? const MappingTab()
                   : changeContext.btnPressed == 2
-                      ? const SizedBox(
-                          child: Center(
-                            child: Text("Design"),
-                          ),
-                        )
+                      ? const DesignTab()
                       : changeContext.btnPressed == 3
                           ? const SizedBox(
                               child: Center(

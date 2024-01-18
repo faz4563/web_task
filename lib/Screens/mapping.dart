@@ -30,7 +30,6 @@ class _MappingTabState extends State<MappingTab> {
                 style: TextStyle(
                     fontSize: 6.sp,
                     fontWeight: FontWeight.bold,
-                    // decoration: TextDecoration.underline,
                     letterSpacing: 1.0),
               ),
               Row(
@@ -100,7 +99,6 @@ class _MappingTabState extends State<MappingTab> {
                               padding: EdgeInsets.symmetric(vertical: 10.h),
                               child: const Text("Report ID"),
                             ),
-                            // const SizedBox(height: 10),
                             SizedBox(
                               height: 35.h,
                               width: 60.w,
@@ -140,7 +138,6 @@ class _MappingTabState extends State<MappingTab> {
                               padding: EdgeInsets.symmetric(vertical: 10.h),
                               child: const Text("Object type"),
                             ),
-                            // const SizedBox(height: 10),
                             SizedBox(
                               height: 35.h,
                               width: 60.w,
@@ -180,15 +177,13 @@ class _MappingTabState extends State<MappingTab> {
                               padding: EdgeInsets.symmetric(vertical: 10.h),
                               child: const Text("Lable for Input value"),
                             ),
-                            // SizedBox(height: 10),
                             const DropdownButtonExample()
                           ]),
                     ),
                   ]),
-              // const SizedBox(height: 50),
-              // const Text("SET INPUT OPTION",
-              //     style: TextStyle(fontSize: 16, fontWeight: FontWeight.w700)),
-              // const SizedBox(height: 10),
+              SizedBox(
+                height: 5.h,
+              ),
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -201,7 +196,6 @@ class _MappingTabState extends State<MappingTab> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text("Allow Multi Select"),
-                            // const SizedBox(height: 10),
                             Padding(
                               padding: const EdgeInsets.only(
                                 bottom: 10,
@@ -225,8 +219,7 @@ class _MappingTabState extends State<MappingTab> {
                                       style: TextStyle(
                                           color: _selectedOption == "Yes"
                                               ? Colors.teal
-                                              : Colors
-                                                  .black), // Custom color for "No"
+                                              : Colors.black),
                                     ),
                                     const SizedBox(width: 20),
                                     Radio<String>(
@@ -245,8 +238,7 @@ class _MappingTabState extends State<MappingTab> {
                                       style: TextStyle(
                                           color: _selectedOption == "No"
                                               ? Colors.teal
-                                              : Colors
-                                                  .black), // Custom color for "No"
+                                              : Colors.black),
                                     ),
                                     const SizedBox(width: 60),
                                     ElevatedButton(
@@ -267,167 +259,7 @@ class _MappingTabState extends State<MappingTab> {
                     ]),
               ),
               const SizedBox(height: 20),
-
-              // Container(
-              //   // width: double.infinity,
-              //   decoration: BoxDecoration(border: Border.all(width: 0.5)),
-              //   child: DataTable(
-              //       headingRowColor: const MaterialStatePropertyAll(
-              //           Color.fromARGB(255, 211, 207, 207)),
-              //       columns: [
-              //         DataColumn(
-              //           label: SizedBox(
-              //             width: 10.w,
-              //             child: const Text(
-              //               "Si.No",
-              //               textAlign: TextAlign.start,
-              //             ),
-              //           ),
-              //           numeric: true,
-              //         ),
-              //         const DataColumn(
-              //             label: Text(
-              //               "Object Type",
-              //               textAlign: TextAlign.start,
-              //             ),
-              //             numeric: false),
-              //         const DataColumn(
-              //             label: Text(
-              //               "Label For Input Value",
-              //               textAlign: TextAlign.start,
-              //             ),
-              //             numeric: false),
-              //         const DataColumn(
-              //             label: Text(
-              //               "Allow Multi Select",
-              //               textAlign: TextAlign.start,
-              //             ),
-              //             numeric: false),
-              //         const DataColumn(
-              //             label: Text(
-              //               "Action",
-              //               textAlign: TextAlign.start,
-              //             ),
-              //             numeric: false),
-              //       ],
-              //       rows: [
-              //         DataRow(cells: [
-              //           const DataCell(
-              //             Text(
-              //               "1",
-              //               textAlign: TextAlign.center,
-              //             ),
-              //           ),
-              //           const DataCell(
-              //             Text(
-              //               "Fazil",
-              //               textAlign: TextAlign.center,
-              //             ),
-              //           ),
-              //           const DataCell(
-              //             Text(
-              //               "Value",
-              //               textAlign: TextAlign.center,
-              //             ),
-              //           ),
-              //           DataCell(
-              //             const Text(
-              //               "Y",
-              //               textAlign: TextAlign.center,
-              //             ),
-              //           ),
-              //           DataCell(IconButton(
-              //               onPressed: () {}, icon: const Icon(Icons.delete))),
-              //         ]),
-              //         DataRow(cells: [
-              //           const DataCell(
-              //             Text(
-              //               "2",
-              //               textAlign: TextAlign.center,
-              //             ),
-              //           ),
-              //           const DataCell(
-              //             Text(
-              //               "Deena",
-              //               textAlign: TextAlign.center,
-              //             ),
-              //           ),
-              //           const DataCell(
-              //             Text(
-              //               "Value",
-              //               textAlign: TextAlign.center,
-              //             ),
-              //           ),
-              //           const DataCell(
-              //             Text(
-              //               "Y",
-              //               textAlign: TextAlign.center,
-              //             ),
-              //           ),
-              //           DataCell(IconButton(
-              //               onPressed: () {}, icon: const Icon(Icons.delete))),
-              //         ]),
-              //         DataRow(cells: [
-              //           const DataCell(
-              //             Text(
-              //               "3",
-              //               textAlign: TextAlign.center,
-              //             ),
-              //           ),
-              //           const DataCell(
-              //             Text(
-              //               "Surya",
-              //               textAlign: TextAlign.center,
-              //             ),
-              //           ),
-              //           const DataCell(
-              //             Text(
-              //               "Value",
-              //               textAlign: TextAlign.center,
-              //             ),
-              //           ),
-              //           const DataCell(
-              //             Text(
-              //               "Y",
-              //               textAlign: TextAlign.center,
-              //             ),
-              //           ),
-              //           DataCell(IconButton(
-              //               onPressed: () {}, icon: const Icon(Icons.delete))),
-              //         ]),
-              //         DataRow(cells: [
-              //           const DataCell(
-              //             Text(
-              //               "4",
-              //               textAlign: TextAlign.center,
-              //             ),
-              //           ),
-              //           const DataCell(
-              //             Text(
-              //               "Ganesh",
-              //               textAlign: TextAlign.center,
-              //             ),
-              //           ),
-              //           const DataCell(
-              //             Text(
-              //               "Value",
-              //               textAlign: TextAlign.center,
-              //             ),
-              //           ),
-              //           const DataCell(
-              //             Text(
-              //               "Y",
-              //               textAlign: TextAlign.center,
-              //             ),
-              //           ),
-              //           DataCell(IconButton(
-              //               onPressed: () {}, icon: const Icon(Icons.delete))),
-              //         ]),
-              //       ]),
-              // )
-
               Expanded(
-                // width: DynamicSizes.width(context),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 0),
                   child: Column(
@@ -454,7 +286,6 @@ class _MappingTabState extends State<MappingTab> {
                                 width: 25.w,
                               ),
                               SizedBox(
-                                // color: Colors.yellow,
                                 width: 45.w,
                                 child: const Text(
                                   "Object Type",
@@ -464,17 +295,14 @@ class _MappingTabState extends State<MappingTab> {
                               SizedBox(
                                 width: 45.w,
                               ),
-                              // const Spacer(),
                               const Text("Label For Input Value"),
                               SizedBox(
                                 width: 45.w,
                               ),
-                              // const Spacer(),
                               const Text("Allow Multi Select"),
                               SizedBox(
                                 width: 70.w,
                               ),
-                              // const Spacer(),
                               const Text("Action"),
                             ],
                           ),
@@ -498,7 +326,6 @@ class _MappingTabState extends State<MappingTab> {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     SizedBox(
-                                      // color: Colors.yellow,
                                       width: 15.w,
                                       child: Text(
                                         "${index + 1}",
@@ -509,7 +336,6 @@ class _MappingTabState extends State<MappingTab> {
                                       width: 27.w,
                                     ),
                                     SizedBox(
-                                      // color: Colors.yellow,
                                       width: 30.w,
                                       child: const Text(
                                         "Fazil",
@@ -520,15 +346,12 @@ class _MappingTabState extends State<MappingTab> {
                                       width: 60.w,
                                     ),
                                     const Text("Value"),
-                                    // const Spacer(),
                                     SizedBox(
                                       width: 70.w,
                                     ),
-
                                     const Text("Y"),
-                                    // const Spacer(),
                                     SizedBox(
-                                      width: 85.w,
+                                      width: 91.w,
                                     ),
                                     IconButton(
                                       onPressed: () {},
